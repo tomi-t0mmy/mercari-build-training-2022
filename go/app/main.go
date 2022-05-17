@@ -6,7 +6,7 @@ import (
 	"encoding/hex"
 	"fmt"
 	"io"
-	"mercari-build-training-2022/app/item_store"
+	"mercari-build-training-2022/go/app/item_store"
 	"net/http"
 	"os"
 	"path"

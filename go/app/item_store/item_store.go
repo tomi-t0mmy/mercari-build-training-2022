@@ -6,7 +6,7 @@ import (
 )
 
 func InsertItem(name string, category string, image string) error {
-	db, _ := sql.Open("sqlite3", "../db/mercari.sqlite3")
+	db, _ := sql.Open("sqlite3", "./db/mercari.sqlite3")
 	defer db.Close()
 
 	command := "INSERT INTO items (name, category, image) VALUES (?, ?, ?)"
@@ -18,7 +18,7 @@ func InsertItem(name string, category string, image string) error {
 }
 
 func GetItems() (*sql.Rows, error) {
-	db, _ := sql.Open("sqlite3", "../db/mercari.sqlite3")
+	db, _ := sql.Open("sqlite3", "./db/mercari.sqlite3")
 	defer db.Close()
 
 	command := "SELECT name, category, image FROM items"
@@ -30,7 +30,7 @@ func GetItems() (*sql.Rows, error) {
 }
 
 func GetItemById(id int) *sql.Row {
-	db, _ := sql.Open("sqlite3", "../db/mercari.sqlite3")
+	db, _ := sql.Open("sqlite3", "./db/mercari.sqlite3")
 	defer db.Close()
 
 	command := "SELECT name, category, image FROM items WHERE id = ?"
@@ -39,7 +39,7 @@ func GetItemById(id int) *sql.Row {
 }
 
 func SerchItems(keyword string) (*sql.Rows, error) {
-	db, _ := sql.Open("sqlite3", "../db/mercari.sqlite3")
+	db, _ := sql.Open("sqlite3", "./db/mercari.sqlite3")
 	defer db.Close()
 
 	command := "SELECT name, category FROM items WHERE name LIKE ?"
